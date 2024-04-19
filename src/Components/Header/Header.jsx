@@ -4,6 +4,7 @@ import search from "../Assets/search.png";
 import cloud from "../Assets/cloud.png";
 import humidity from "../Assets/humidity.png";
 import wind from "../Assets/wind.png";
+import animation from "../Assets/animation.gif"
 const Header = () => {
   let api_key = "4c4ca329db43f73e19bcf149070387ca";
   const [location, setLocation] = useState("china");
@@ -53,7 +54,9 @@ const Header = () => {
         <img src={cloud} alt="" />
       </div>
       {loading ? (
-        <div className="loading">Loading ...</div>
+        <div className="loading">
+           <img src={animation} className="animation" alt="" />
+        </div>
       ) : (
         <>
           <div className="temperature"> {temp} &deg;C</div>
@@ -62,7 +65,7 @@ const Header = () => {
             <div className="element">
               <img src={humidity} alt="" className="icon" />
               <div className="data">
-                <div className="humidity">{humidity}</div>
+                <div className="humidity">{humidity}%</div>
                 <div className="text">Humidity</div>
               </div>
             </div>
